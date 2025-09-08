@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <p>Статья номер {{ article_id }}. Тег {{ tags }}</p>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <h1>Список статей</h1>
+    {% for article in articles %}
+<a href="{{ article.get_url }}"><h2>{{ article.name }}</h2></a>
+    <div>{{ article.body|slice:":200" }}</div>
+    {% endfor %}
+{% endblock %}

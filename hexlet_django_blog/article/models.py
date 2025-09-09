@@ -14,3 +14,8 @@ class Article(models.Model):
 
     def get_url(self):
         return reverse('article_show', args=[self.id])
+
+
+
+class ArticleComment(models.Model):
+    content = models.CharField("content", max_length=100)

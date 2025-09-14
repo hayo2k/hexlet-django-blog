@@ -5,5 +5,6 @@
     {% for article in articles %}
 <a href="{{ article.get_url }}"><h2>{{ article.name }}</h2></a>
     <div>{{ article.body|slice:":200" }}</div>
+<a href="{% url 'articles_delete' article.id%}">Удалить</a>
     {% endfor %}
 {% endblock %}
